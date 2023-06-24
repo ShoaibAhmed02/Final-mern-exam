@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const RecipeForm = require("./views/formcmp");
+const RecipeForm = require("./views/recipie");
 
 const Product = require("./models/product");
 const ejs = require("ejs");
@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("RecipeForm");
+  res.render("product");
 });
 
 app.get("/products", async (req, res) => {
@@ -20,9 +20,9 @@ app.get("/products", async (req, res) => {
   });
 });
 
+// Adding product into the mongodb
 app.get("/product/new",async (req, res) => {
        await Product(req.body);
-
   res.render("newProduct", {
     product: {},
   });
