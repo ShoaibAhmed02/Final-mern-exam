@@ -1,4 +1,7 @@
 // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+
+
+//created the connections with mongodb and created the model 
 const connectionString = "mongodb://127.0.0.1:27017/Recipes";
 
 const mongoose = require("mongoose");
@@ -11,16 +14,6 @@ const ProductSchema = new Schema({
   description: String,
   ingredients: String,
   description: String,
-  
 });
 
 module.exports = mongoose.model("item", ProductSchema);
-
-
-
-
-
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000.");
-});
