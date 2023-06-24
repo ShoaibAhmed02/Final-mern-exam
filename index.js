@@ -52,6 +52,8 @@ app.get("/product/edit/:pid", async (req, res) => {
   });
 });
 
+
+//updating the recipies list
 app.post("/product/update/:pid", async (req, res) => {
   const { pid } = req.params;
   const { body } = req;
