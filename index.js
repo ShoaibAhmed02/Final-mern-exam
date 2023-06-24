@@ -20,8 +20,8 @@ app.get("/products", async (req, res) => {
   });
 });
 
-app.get("/product/new", (req, res) => {
-
+app.get("/product/new",async (req, res) => {
+       await Product(req.body);
 
   res.render("newProduct", {
     product: {},
