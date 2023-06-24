@@ -12,6 +12,8 @@ app.get("/", (req, res) => {
   res.render("product");
 });
 
+
+//showing all the recipes
 app.get("/products", async (req, res) => {
   const products = await Product.find();
   res.render("products", {
