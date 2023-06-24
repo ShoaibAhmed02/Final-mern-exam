@@ -28,6 +28,8 @@ app.get("/product/new",async (req, res) => {
   });
 });
 
+
+/// Printing the data
 app.get("/product/:pid", async (req, res) => {
   console.log(req.params.pid);
   const product = await Product.findById(req?.params?.pid);
@@ -36,6 +38,8 @@ app.get("/product/:pid", async (req, res) => {
   });
 });
 
+
+//deleting the product 
 app.get("/product/delete/:pid", async (req, res) => {
   const product = await Product.findByIdAndDelete(req.params.pid);
   res.redirect("/products");
