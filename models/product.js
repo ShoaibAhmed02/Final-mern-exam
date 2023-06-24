@@ -13,7 +13,7 @@ const ProductSchema = new Schema({
   name: String,
   description: String,
   ingredients: String,
-  description: String,
+  instructions: String,
 });
 
 module.exports = mongoose.model("item", ProductSchema);
